@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<string>
+#include<fstream>
 
 
 class Catalog
@@ -50,6 +51,7 @@ private:
 
 int main()
 {
+	Catalog ;
 	int choose = 10;
 	std::cout << "Добро пожаловать в каталог песен.\n" <<
 		"Выберите пункт меню\n";
