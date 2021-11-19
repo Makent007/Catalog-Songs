@@ -156,17 +156,14 @@ int main()
 			std::cout << "Текст какой песни удалить? \n ";
 			
 			std::cin >> num;
-			dlya_zapisi.open("Catalog Song for record.txt");
-
-			/*
-			for (int i = 0; i < num; i++)
+			dlya_zapisi.open("Catalog Song for record.txt",std::ios::trunc);
+			vect_cat.erase(vect_cat.begin() + (num - 1));
+			for (int i = 0; i < vect_cat.size(); i++)
 			{
-				cat_free.redact();
-				vect_cat.push_back(cat_free);
-
+				vect_cat.at(i).print();
 			}
-			dlya_zapisi.close()
-			*/
+			dlya_zapisi.close();
+			
 			break;
 			
 		case 3://Изменение текста песни
@@ -174,7 +171,7 @@ int main()
 			break;
 		case 4://Отображение текста песни на экран
 			std::cout << "Текст какой песни показать на экране? \n ";
-			dlya_chteniya.open("Catalog pesen.txt");
+			dlya_chteniya.open("Catalog pesen.txt");  //dlya_zapisi.open("Catalog Song for record.txt"); или этот
 			if (dlya_chteniya.is_open())
 			{
 				std::cout << "File is iopen\n";
